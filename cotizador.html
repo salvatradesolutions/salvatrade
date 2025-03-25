@@ -3,52 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
     <title>Salvatrade Solutions</title>
     <style>
-        body {
+        /* Reset básico */
+        * {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            box-sizing: border-box;
         }
-        header, footer {
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* HEADER */
+        header {
             background-color: black;
             color: white;
             text-align: center;
-            padding: 50px 0;
+            padding: 20px 0;
         }
+
+        .logo-container img {
+            width: 250px;
+        }
+
+        /* NAV */
+        nav {
+            margin-top: 10px;
+        }
+
         nav ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
-            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
+
         nav ul li {
             display: inline;
-            margin-right: 20px;
         }
+
         nav ul li a {
             color: white;
             text-decoration: none;
-        }
-        
-        /* Estilo para centrar la imagen */
-        .logo-container {
-            display: flex;
-            justify-content: center;
+            font-weight: bold;
+            transition: color 0.3s ease;
         }
 
+        nav ul li a:hover {
+            color: #f4a261;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
         #container {
-            width: 60%;
-            margin: 0 auto;
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto;
             text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        /* IFRAME */
         #websiteFrame {
             width: 100%;
             height: 1200px;
             margin-top: 20px;
             border: none;
-            /* Oculta el borde */
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .logo-container img {
+                width: 200px;
+            }
+
+            #container {
+                width: 95%;
+            }
+
+            #websiteFrame {
+                height: 800px;
+            }
         }
     </style>
 </head>
@@ -56,17 +111,15 @@
 
 <header>
     <div class="logo-container">
-        <h1><a><img src="img/salvatrade_logo.png" style="width: 250px;"></a></h1>
-      </div>
-
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <ul class="nav-menu">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="cbm.html">CALCULADORA DE CBM</a></li>
-        </ul>
-      </nav><!-- #nav-menu-container -->
+        <img src="img/salvatrade_logo.png" alt="Salvatrade Solutions Logo">
     </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="cbm.html">CALCULADORA DE CBM</a></li>
+        </ul>
+    </nav>
 </header>
 
 <main>
@@ -75,11 +128,8 @@
     </div>
 </main>
 
-
 <footer>
-    <div class="copyright">
-        &copy; Copyright <strong>Salvatrade Solutions</strong>. All Rights Reserved
-      </div>
+    <p>&copy; <strong>Salvatrade Solutions</strong>. All Rights Reserved</p>
 </footer>
 
 </body>
