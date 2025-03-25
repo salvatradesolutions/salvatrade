@@ -1109,15 +1109,24 @@ p {
 
 .video-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Centra los videos */
+  gap: 20px; /* Espacio entre videos */
+  flex-wrap: wrap; /* Permite que los videos se ajusten en pantallas pequeñas */
   margin-bottom: 20px;
 }
 
 .video-container iframe {
-  width: 48%; /* Ajusta el ancho de cada video */
-  height: 300px; /* Ajusta la altura de los videos según sea necesario */
+  width: 48%; /* Ajusta el ancho de cada video en pantallas grandes */
+  height: 300px; /* Mantiene una altura fija */
 }
 
+/* Para pantallas pequeñas, los videos ocuparán el 100% del ancho */
+@media (max-width: 768px) {
+  .video-container iframe {
+    width: 100%;
+    height: 250px; /* Reduce la altura en pantallas pequeñas */
+  }
+}
 
 /* Contact Section
 --------------------------------*/
